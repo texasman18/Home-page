@@ -7,518 +7,311 @@
 </head>
 <body>
 <x-dc>
-<helmet data-dc-atomics>
-  <meta name="design_doc_mode" content="canvas">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; background: #e5e2dc; font-family: 'Manrope', 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; }
+    body { margin: 0; background: #eef1f5; font-family: 'Manrope', sans-serif; -webkit-font-smoothing: antialiased; }
     a, a:hover { color: inherit; text-decoration: none; }
-    .dv-turn { padding: 40px 44px 32px; border-bottom: 1px solid rgba(0,0,0,.08); scroll-margin-top: 16px; }
-    .dv-thd { display: flex; align-items: baseline; gap: 10px; margin: 0 0 20px; }
-    .dv-tid { font: 600 10px ui-monospace, monospace; padding: 3px 7px; background: #1a1a1a; color: #fff; border-radius: 4px; text-decoration: none; }
-    .dv-tname { font: 600 13px/1.2 system-ui, sans-serif; color: #1a1a1a; }
-    .dv-opts { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
-    .dv-opt { flex: none; display: flex; flex-direction: column; gap: 9px; scroll-margin-top: 16px; }
-    .dv-oid { font: 600 10.5px ui-monospace, monospace; padding: 3px 7px; background: rgba(0,0,0,.08); color: #1a1a1a; border-radius: 5px; text-decoration: none; }
-    .dv-olabel { display: flex; align-items: baseline; gap: 8px; font: 400 11px/1.3 system-ui, sans-serif; color: rgba(0,0,0,.55); }
-    .dv-card { overflow: hidden; border-radius: 10px; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .dv-opt:target .dv-oid { background: #2a78d6; color: #fff; }
-    .dv-next { margin: 22px 0 0; font: 12px/1.5 system-ui, sans-serif; color: rgba(0,0,0,.5); }
+    .lang-btn { transition: opacity 0.15s; cursor: pointer; }
+    .lang-btn:active { opacity: 0.7; }
   </style>
 </helmet>
 
-<section class="dv-turn" id="t1">
-  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">TechSell 홈페이지 리디자인</span></div>
-  <div class="dv-opts">
+<div style="width:390px; margin:0 auto; background:#fff; min-height:100vh;">
 
-    <!-- ═══════════════════════════════════════════════════
-         OPTION 1a — 크림 캔버스 · 스플릿 히어로
-    ═══════════════════════════════════════════════════ -->
-    <div class="dv-opt" id="1a">
-      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>크림 캔버스 · 스플릿 히어로 · 따뜻하고 전문적</div>
-      <div class="dv-card" style="width:1440px; background:#f2f0eb;">
-
-        <!-- NAV -->
-        <nav style="background:#fff; height:72px; padding:0 56px; display:flex; align-items:center; box-shadow:0 1px 3px rgba(0,0,0,0.1),0 2px 2px rgba(0,0,0,0.06),0 0 2px rgba(0,0,0,0.07);">
-          <div style="display:flex; align-items:center; gap:12px;">
-            <svg width="38" height="38" viewBox="0 0 100 100">
-              <rect x="0" y="0" width="100" height="100" rx="22" fill="#1E3932"></rect>
-              <text x="6" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="800" fill="white" letter-spacing="-3">T</text>
-              <text x="47" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="400" fill="white">S</text>
-            </svg>
-            <div>
-              <div style="font-size:17px; font-weight:700; color:#006241; letter-spacing:-0.01em; line-height:1.1;">TechSell</div>
-              <div style="font-size:9px; font-weight:600; color:rgba(0,0,0,0.4); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px;">App Development Studio</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:40px; margin:0 auto;">
-            <span style="font-size:15px; font-weight:500; color:rgba(0,0,0,0.65); letter-spacing:-0.01em; cursor:pointer;">서비스</span>
-            <span style="font-size:15px; font-weight:600; color:#006241; letter-spacing:-0.01em; cursor:pointer;">포트폴리오</span>
-            <span style="font-size:15px; font-weight:500; color:rgba(0,0,0,0.65); letter-spacing:-0.01em; cursor:pointer;">회사소개</span>
-            <span style="font-size:15px; font-weight:500; color:rgba(0,0,0,0.65); letter-spacing:-0.01em; cursor:pointer;">채용</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:16px;">
-            <span style="font-size:13px; font-weight:500; color:rgba(0,0,0,0.45); cursor:pointer; letter-spacing:-0.01em;">KO</span>
-            <button style="background:#00754A; color:#fff; border:none; border-radius:50px; padding:10px 26px; font-size:14px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-          </div>
-        </nav>
-
-        <!-- HERO -->
-        <section style="background:#f2f0eb; padding:100px 96px; display:flex; align-items:center; gap:80px; min-height:580px; position:relative; overflow:hidden;">
-          <!-- Left -->
-          <div style="flex:0 0 560px; position:relative; z-index:1;">
-            <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(0,98,65,0.1); border-radius:50px; padding:7px 16px; margin-bottom:36px;">
-              <div style="width:7px; height:7px; background:#00754A; border-radius:50%;"></div>
-              <span style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#006241;">Mobile App Studio · 테크셀</span>
-            </div>
-            <h1 style="font-size:70px; font-weight:800; color:#006241; letter-spacing:-0.03em; line-height:1.03; margin:0 0 28px; font-family:'Manrope',sans-serif;">일상의 불편함을<br>해결합니다</h1>
-            <p style="font-size:18px; font-weight:400; color:rgba(0,0,0,0.58); letter-spacing:-0.01em; line-height:1.75; margin:0 0 52px; max-width:430px;">꼭 필요한데 마땅한 앱이 없을 때,<br>테크셀이 만든 앱이 해결해 드립니다.</p>
-            <div style="display:flex; gap:12px; align-items:center;">
-              <button style="background:#00754A; color:#fff; border:none; border-radius:50px; padding:16px 36px; font-size:16px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">포트폴리오 보기</button>
-              <button style="background:transparent; color:#006241; border:1.5px solid #006241; border-radius:50px; padding:16px 36px; font-size:16px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-            </div>
-          </div>
-          <!-- Right: Phone mockup -->
-          <div style="flex:1; display:flex; justify-content:center; align-items:flex-end; position:relative; min-height:480px;">
-            <div style="width:280px; background:#fff; border-radius:32px; padding:22px 18px 28px; box-shadow:0 40px 80px rgba(0,0,0,0.14),0 8px 24px rgba(0,0,0,0.08); border:1px solid rgba(0,0,0,0.06); transform:perspective(1200px) rotateY(-10deg) rotateX(3deg);">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; padding:0 4px;">
-                <span style="font-size:11px; font-weight:700; color:rgba(0,0,0,0.7);">9:41</span>
-                <div style="display:flex; gap:4px; align-items:center;">
-                  <div style="width:15px; height:7px; background:#1E3932; border-radius:2px;"></div>
-                  <div style="width:11px; height:7px; background:rgba(0,0,0,0.2); border-radius:2px;"></div>
-                </div>
-              </div>
-              <div style="text-align:center; margin-bottom:18px;">
-                <div style="width:56px; height:56px; background:#1E3932; border-radius:14px; margin:0 auto 10px; display:flex; align-items:center; justify-content:center;">
-                  <span style="font-size:26px; font-weight:800; color:#fff; font-family:'Manrope',sans-serif; letter-spacing:-2px;">Y</span>
-                </div>
-                <div style="font-size:17px; font-weight:700; color:#1E3932; letter-spacing:-0.01em;">YAM</div>
-                <div style="font-size:11px; color:rgba(0,0,0,0.45); margin-top:3px; letter-spacing:-0.01em;">내 주변 화장실</div>
-              </div>
-              <!-- Map placeholder -->
-              <div style="height:144px; background:#d4e9e2; border-radius:14px; margin-bottom:14px; position:relative; overflow:hidden;">
-                <div style="position:absolute; left:33%; top:0; bottom:0; width:1px; background:rgba(0,98,65,0.25);"></div>
-                <div style="position:absolute; left:66%; top:0; bottom:0; width:1px; background:rgba(0,98,65,0.25);"></div>
-                <div style="position:absolute; top:33%; left:0; right:0; height:1px; background:rgba(0,98,65,0.25);"></div>
-                <div style="position:absolute; top:66%; left:0; right:0; height:1px; background:rgba(0,98,65,0.25);"></div>
-                <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-58%);">
-                  <div style="width:28px; height:28px; background:#00754A; border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:0 4px 12px rgba(0,117,74,0.5);"></div>
-                </div>
-              </div>
-              <!-- List -->
-              <div style="display:flex; flex-direction:column; gap:8px;">
-                <div style="height:40px; background:#f2f0eb; border-radius:10px; padding:0 14px; display:flex; align-items:center; gap:10px;">
-                  <div style="width:8px; height:8px; background:#00754A; border-radius:50%; flex:0 0 8px;"></div>
-                  <div style="height:8px; background:rgba(0,0,0,0.12); border-radius:4px; flex:1;"></div>
-                  <span style="font-size:11px; font-weight:600; color:rgba(0,0,0,0.4);">120m</span>
-                </div>
-                <div style="height:40px; background:#f2f0eb; border-radius:10px; padding:0 14px; display:flex; align-items:center; gap:10px;">
-                  <div style="width:8px; height:8px; background:rgba(0,0,0,0.18); border-radius:50%; flex:0 0 8px;"></div>
-                  <div style="height:8px; background:rgba(0,0,0,0.07); border-radius:4px; flex:1;"></div>
-                  <span style="font-size:11px; font-weight:600; color:rgba(0,0,0,0.3);">350m</span>
-                </div>
-                <div style="height:40px; background:#f2f0eb; border-radius:10px; padding:0 14px; display:flex; align-items:center; gap:10px;">
-                  <div style="width:8px; height:8px; background:rgba(0,0,0,0.12); border-radius:50%; flex:0 0 8px;"></div>
-                  <div style="height:8px; background:rgba(0,0,0,0.05); border-radius:4px; flex:1;"></div>
-                  <span style="font-size:11px; font-weight:600; color:rgba(0,0,0,0.2);">520m</span>
-                </div>
-              </div>
-            </div>
-            <div style="position:absolute; right:-80px; top:-60px; width:400px; height:400px; background:rgba(0,98,65,0.06); border-radius:50%; z-index:0;"></div>
-          </div>
-          <div style="position:absolute; right:-180px; bottom:-200px; width:560px; height:560px; background:rgba(0,98,65,0.04); border-radius:50%;"></div>
-        </section>
-
-        <!-- STATS STRIP -->
-        <section style="background:#fff; padding:44px 96px; display:flex; align-items:center; border-top:1px solid #edebe9; border-bottom:1px solid #edebe9;">
-          <div style="flex:1; text-align:center;">
-            <div style="font-size:42px; font-weight:800; color:#006241; letter-spacing:-0.03em; line-height:1; font-family:'Manrope',sans-serif;">3+</div>
-            <div style="font-size:13px; font-weight:500; color:rgba(0,0,0,0.5); margin-top:8px; letter-spacing:-0.01em;">출시 앱</div>
-          </div>
-          <div style="width:1px; height:48px; background:#edebe9;"></div>
-          <div style="flex:1; text-align:center;">
-            <div style="font-size:42px; font-weight:800; color:#006241; letter-spacing:-0.03em; line-height:1; font-family:'Manrope',sans-serif;">10K+</div>
-            <div style="font-size:13px; font-weight:500; color:rgba(0,0,0,0.5); margin-top:8px; letter-spacing:-0.01em;">누적 다운로드</div>
-          </div>
-          <div style="width:1px; height:48px; background:#edebe9;"></div>
-          <div style="flex:1; text-align:center;">
-            <div style="font-size:42px; font-weight:800; color:#006241; letter-spacing:-0.03em; line-height:1; font-family:'Manrope',sans-serif;">4.8★</div>
-            <div style="font-size:13px; font-weight:500; color:rgba(0,0,0,0.5); margin-top:8px; letter-spacing:-0.01em;">앱스토어 평점</div>
-          </div>
-          <div style="width:1px; height:48px; background:#edebe9;"></div>
-          <div style="flex:1; text-align:center;">
-            <div style="font-size:42px; font-weight:800; color:#006241; letter-spacing:-0.03em; line-height:1; font-family:'Manrope',sans-serif;">2020</div>
-            <div style="font-size:13px; font-weight:500; color:rgba(0,0,0,0.5); margin-top:8px; letter-spacing:-0.01em;">설립연도</div>
-          </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section style="background:#f2f0eb; padding:96px 96px 80px;">
-          <div style="margin-bottom:56px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00754A; margin-bottom:16px;">Portfolio</div>
-            <h2 style="font-size:48px; font-weight:800; color:rgba(0,0,0,0.87); letter-spacing:-0.025em; line-height:1.1; margin:0 0 14px; font-family:'Manrope',sans-serif;">테크셀이 만든 앱</h2>
-            <p style="font-size:17px; color:rgba(0,0,0,0.52); letter-spacing:-0.01em; margin:0; line-height:1.6;">일상 속 불편함에서 출발한 앱들을 소개합니다</p>
-          </div>
-
-          <!-- Featured app -->
-          <div style="background:#fff; border-radius:20px; padding:48px 52px; display:flex; align-items:center; gap:56px; margin-bottom:20px; box-shadow:0 0 0.5px rgba(0,0,0,0.14),0 1px 1px rgba(0,0,0,0.24);">
-            <div style="width:96px; height:96px; background:#1E3932; border-radius:22px; display:flex; align-items:center; justify-content:center; flex:0 0 96px;">
-              <span style="font-size:44px; font-weight:800; color:#fff; font-family:'Manrope',sans-serif; letter-spacing:-2px; line-height:1;">Y</span>
-            </div>
-            <div style="flex:1;">
-              <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
-                <span style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(0,0,0,0.38);">APP NO.1</span>
-                <span style="display:inline-block; background:rgba(0,117,74,0.12); color:#00754A; font-size:11px; font-weight:700; letter-spacing:0.05em; padding:3px 10px; border-radius:50px;">무료</span>
-              </div>
-              <div style="font-size:34px; font-weight:800; color:#1E3932; letter-spacing:-0.025em; margin-bottom:8px; font-family:'Manrope',sans-serif; line-height:1;">YAM</div>
-              <div style="font-size:16px; color:rgba(0,0,0,0.58); letter-spacing:-0.01em; margin-bottom:20px; line-height:1.55;">내 주변 화장실 · 급할 때 가장 먼저<br>GPS 기반 실시간 화장실 위치 안내 앱</div>
-              <div style="display:flex; gap:8px; flex-wrap:wrap;">
-                <span style="font-size:12px; font-weight:600; background:#edebe9; color:rgba(0,0,0,0.55); padding:5px 14px; border-radius:50px; letter-spacing:-0.01em;">위치 서비스</span>
-                <span style="font-size:12px; font-weight:600; background:#edebe9; color:rgba(0,0,0,0.55); padding:5px 14px; border-radius:50px; letter-spacing:-0.01em;">지도</span>
-                <span style="font-size:12px; font-weight:600; background:#edebe9; color:rgba(0,0,0,0.55); padding:5px 14px; border-radius:50px; letter-spacing:-0.01em;">생활편의</span>
-              </div>
-            </div>
-            <div style="flex:0 0 auto; text-align:right; display:flex; flex-direction:column; gap:12px; align-items:flex-end;">
-              <button style="background:#1E3932; color:#fff; border:none; border-radius:50px; padding:14px 32px; font-size:15px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer; white-space:nowrap;">앱 열기 →</button>
-              <div style="font-size:12px; color:rgba(0,0,0,0.38); letter-spacing:-0.01em;">App Store · Google Play</div>
-            </div>
-          </div>
-
-          <!-- Coming soon cards -->
-          <div style="display:flex; gap:20px;">
-            <div style="flex:1; background:#fff; border-radius:20px; padding:40px 44px; box-shadow:0 0 0.5px rgba(0,0,0,0.14),0 1px 1px rgba(0,0,0,0.24); position:relative; overflow:hidden; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
-              <div style="position:absolute; top:20px; right:20px; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(0,0,0,0.28); background:#f2f0eb; padding:4px 12px; border-radius:50px;">준비 중</div>
-              <div style="width:68px; height:68px; background:#edebe9; border-radius:18px;"></div>
-              <div>
-                <div style="font-size:20px; font-weight:800; color:rgba(0,0,0,0.2); letter-spacing:-0.02em; margin-bottom:6px; font-family:'Manrope',sans-serif;">Coming Soon</div>
-                <div style="font-size:14px; color:rgba(0,0,0,0.28); letter-spacing:-0.01em;">새로운 앱이 곧 출시됩니다</div>
-              </div>
-            </div>
-            <div style="flex:1; background:#fff; border-radius:20px; padding:40px 44px; box-shadow:0 0 0.5px rgba(0,0,0,0.14),0 1px 1px rgba(0,0,0,0.24); position:relative; overflow:hidden; min-height:160px; display:flex; flex-direction:column; justify-content:space-between;">
-              <div style="position:absolute; top:20px; right:20px; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(0,0,0,0.28); background:#f2f0eb; padding:4px 12px; border-radius:50px;">준비 중</div>
-              <div style="width:68px; height:68px; background:#edebe9; border-radius:18px;"></div>
-              <div>
-                <div style="font-size:20px; font-weight:800; color:rgba(0,0,0,0.2); letter-spacing:-0.02em; margin-bottom:6px; font-family:'Manrope',sans-serif;">Coming Soon</div>
-                <div style="font-size:14px; color:rgba(0,0,0,0.28); letter-spacing:-0.01em;">새로운 앱이 곧 출시됩니다</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- ABOUT — House Green band -->
-        <section style="background:#1E3932; padding:96px 96px; display:flex; gap:96px; align-items:center;">
-          <div style="flex:0 0 460px;">
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:24px;">About TechSell</div>
-            <h2 style="font-size:44px; font-weight:800; color:#fff; letter-spacing:-0.025em; line-height:1.1; margin:0 0 28px; font-family:'Manrope',sans-serif;">불편함을 발견하고<br>앱으로 해결합니다</h2>
-            <p style="font-size:17px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; line-height:1.75; margin:0 0 40px;">테크셀은 일상 속 꼭 필요하지만 존재하지 않는 앱을 직접 발굴하고 개발하는 모바일 앱 스튜디오입니다. 빠른 실행력과 사용자 중심 설계로 진짜 문제를 해결합니다.</p>
-            <button style="background:#fff; color:#1E3932; border:none; border-radius:50px; padding:14px 32px; font-size:15px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">더 알아보기</button>
-          </div>
-          <div style="flex:1; display:flex; flex-direction:column; gap:16px;">
-            <div style="background:rgba(255,255,255,0.07); border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start;">
-              <div style="width:40px; height:40px; background:#00754A; border-radius:10px; flex:0 0 40px;"></div>
-              <div>
-                <div style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.01em; margin-bottom:8px;">빠른 실행</div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.58); letter-spacing:-0.01em; line-height:1.65;">아이디어에서 출시까지 최단 시간으로 검증합니다</div>
-              </div>
-            </div>
-            <div style="background:rgba(255,255,255,0.07); border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start;">
-              <div style="width:40px; height:40px; background:#006241; border-radius:10px; flex:0 0 40px;"></div>
-              <div>
-                <div style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.01em; margin-bottom:8px;">사용자 중심</div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.58); letter-spacing:-0.01em; line-height:1.65;">진짜 불편함에서 시작해 실제로 쓰이는 앱을 만듭니다</div>
-              </div>
-            </div>
-            <div style="background:rgba(255,255,255,0.07); border-radius:16px; padding:28px 32px; display:flex; gap:20px; align-items:flex-start;">
-              <div style="width:40px; height:40px; background:rgba(255,255,255,0.12); border-radius:10px; flex:0 0 40px;"></div>
-              <div>
-                <div style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.01em; margin-bottom:8px;">지속적 개선</div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.58); letter-spacing:-0.01em; line-height:1.65;">출시 후에도 사용자 피드백으로 계속 발전합니다</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CONTACT CTA -->
-        <section style="background:#00754A; padding:80px 96px; display:flex; align-items:center; justify-content:space-between;">
-          <div>
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:16px;">Contact</div>
-            <h2 style="font-size:42px; font-weight:800; color:#fff; letter-spacing:-0.025em; line-height:1.15; margin:0; font-family:'Manrope',sans-serif;">앱 개발 · 협업 ·<br>비즈니스 문의</h2>
-          </div>
-          <div style="display:flex; gap:16px;">
-            <button style="background:#fff; color:#00754A; border:none; border-radius:50px; padding:17px 44px; font-size:16px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-            <button style="background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.5); border-radius:50px; padding:17px 40px; font-size:16px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">채용 공고</button>
-          </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer style="background:#1E3932; padding:56px 96px 40px;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:48px;">
-            <div>
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
-                <svg width="30" height="30" viewBox="0 0 100 100">
-                  <rect x="0" y="0" width="100" height="100" rx="22" fill="rgba(255,255,255,0.1)"></rect>
-                  <text x="6" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="800" fill="white" letter-spacing="-3">T</text>
-                  <text x="47" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="400" fill="white">S</text>
-                </svg>
-                <span style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.01em;">TechSell</span>
-              </div>
-              <div style="font-size:13px; color:rgba(255,255,255,0.48); line-height:1.75; letter-spacing:-0.01em;">일상의 불편함을 해결하는 앱 스튜디오<br>서울특별시 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b3bfbea4b1b3a490a4b5b3b8a3b5bcbcfebba2">[email&#160;protected]</a></div>
-            </div>
-            <div style="display:flex; gap:80px;">
-              <div>
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-bottom:16px;">제품</div>
-                <div style="display:flex; flex-direction:column; gap:12px;">
-                  <a style="font-size:14px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; cursor:pointer;">YAM</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; cursor:pointer;">포트폴리오</a>
-                </div>
-              </div>
-              <div>
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-bottom:16px;">회사</div>
-                <div style="display:flex; flex-direction:column; gap:12px;">
-                  <a style="font-size:14px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; cursor:pointer;">회사소개</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; cursor:pointer;">채용</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.68); letter-spacing:-0.01em; cursor:pointer;">문의</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:12px; color:rgba(255,255,255,0.32); letter-spacing:-0.01em;">© 2024 TechSell. All rights reserved.</div>
-            <div style="display:flex; gap:24px;">
-              <a style="font-size:12px; color:rgba(255,255,255,0.32); letter-spacing:-0.01em; cursor:pointer;">개인정보처리방침</a>
-              <a style="font-size:12px; color:rgba(255,255,255,0.32); letter-spacing:-0.01em; cursor:pointer;">이용약관</a>
-            </div>
-          </div>
-        </footer>
-
+  <!-- NAV -->
+  <nav style="background:#fff; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,0.06); position:sticky; top:0; z-index:100;">
+    <div style="display:flex; align-items:center; gap:9px;">
+      <svg width="32" height="32" viewBox="0 0 100 100">
+        <defs><linearGradient id="ng" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3db8f5"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+        <rect x="0" y="0" width="100" height="100" rx="22" fill="url(#ng)"></rect>
+        <text x="8" y="66" font-family="Manrope,sans-serif" font-size="50" font-weight="800" fill="white" letter-spacing="-2">T</text>
+        <text x="48" y="66" font-family="Manrope,sans-serif" font-size="50" font-weight="400" fill="white">S</text>
+      </svg>
+      <span style="font-size:16px; font-weight:800; color:#0f172a; letter-spacing:-0.02em;">TechSell</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <!-- Language Toggle -->
+      <div style="display:flex; align-items:center; background:#f1f5f9; border-radius:50px; padding:3px; gap:2px;">
+        <button class="lang-btn" onClick="{{ setKo }}" style="display:flex; align-items:center; gap:5px; border:none; border-radius:50px; padding:5px 10px; font-size:11px; font-weight:700; font-family:'Manrope',sans-serif; cursor:pointer; background:{{ koBg }}; color:{{ koColor }}; box-shadow:{{ koShadow }}; transition:all 0.18s;">
+          <span style="font-size:15px;">🇰🇷</span><span>KO</span>
+        </button>
+        <button class="lang-btn" onClick="{{ setEn }}" style="display:flex; align-items:center; gap:5px; border:none; border-radius:50px; padding:5px 10px; font-size:11px; font-weight:700; font-family:'Manrope',sans-serif; cursor:pointer; background:{{ enBg }}; color:{{ enColor }}; box-shadow:{{ enShadow }}; transition:all 0.18s;">
+          <span style="font-size:15px;">🇬🇧</span><span>EN</span>
+        </button>
       </div>
-    </div><!-- /1a -->
-
-
-    <!-- ═══════════════════════════════════════════════════
-         OPTION 1b — 다크 그린 히어로 · 대담한 에디토리얼
-    ═══════════════════════════════════════════════════ -->
-    <div class="dv-opt" id="1b">
-      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>다크 그린 히어로 · 대담한 에디토리얼</div>
-      <div class="dv-card" style="width:1440px; background:#f2f0eb;">
-
-        <!-- NAV 1b — dark -->
-        <nav style="background:#1E3932; height:72px; padding:0 56px; display:flex; align-items:center;">
-          <div style="display:flex; align-items:center; gap:12px;">
-            <svg width="38" height="38" viewBox="0 0 100 100">
-              <rect x="0" y="0" width="100" height="100" rx="22" fill="rgba(255,255,255,0.12)"></rect>
-              <text x="6" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="800" fill="white" letter-spacing="-3">T</text>
-              <text x="47" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="400" fill="white">S</text>
-            </svg>
-            <div>
-              <div style="font-size:17px; font-weight:700; color:#fff; letter-spacing:-0.01em; line-height:1.1;">TechSell</div>
-              <div style="font-size:9px; font-weight:600; color:rgba(255,255,255,0.38); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px;">App Development Studio</div>
-            </div>
-          </div>
-          <div style="display:flex; align-items:center; gap:40px; margin:0 auto;">
-            <span style="font-size:15px; font-weight:500; color:rgba(255,255,255,0.65); letter-spacing:-0.01em; cursor:pointer;">서비스</span>
-            <span style="font-size:15px; font-weight:500; color:rgba(255,255,255,0.65); letter-spacing:-0.01em; cursor:pointer;">포트폴리오</span>
-            <span style="font-size:15px; font-weight:500; color:rgba(255,255,255,0.65); letter-spacing:-0.01em; cursor:pointer;">회사소개</span>
-            <span style="font-size:15px; font-weight:500; color:rgba(255,255,255,0.65); letter-spacing:-0.01em; cursor:pointer;">채용</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:16px;">
-            <span style="font-size:13px; font-weight:500; color:rgba(255,255,255,0.38); cursor:pointer; letter-spacing:-0.01em;">KO</span>
-            <button style="background:#fff; color:#1E3932; border:none; border-radius:50px; padding:10px 26px; font-size:14px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-          </div>
-        </nav>
-
-        <!-- HERO 1b — Full dark green, large display -->
-        <section style="background:#1E3932; padding:128px 96px 100px; text-align:center; position:relative; overflow:hidden;">
-          <div style="font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:32px;">Mobile App Studio · 테크셀</div>
-          <h1 style="font-size:92px; font-weight:800; color:#fff; letter-spacing:-0.035em; line-height:0.98; margin:0 0 36px; font-family:'Manrope',sans-serif; position:relative; z-index:1;">일상의 불편함을<br><span style="color:#d4e9e2;">해결합니다</span></h1>
-          <p style="font-size:20px; font-weight:400; color:rgba(255,255,255,0.62); letter-spacing:-0.01em; line-height:1.7; margin:0 auto 56px; max-width:480px; position:relative; z-index:1;">꼭 필요한데 마땅한 앱이 없을 때,<br>테크셀이 만든 앱이 해결해 드립니다</p>
-          <div style="display:flex; gap:16px; justify-content:center; position:relative; z-index:1;">
-            <button style="background:#fff; color:#1E3932; border:none; border-radius:50px; padding:18px 44px; font-size:16px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">포트폴리오 보기</button>
-            <button style="background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.38); border-radius:50px; padding:18px 40px; font-size:16px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-          </div>
-          <div style="position:absolute; left:-220px; top:-220px; width:640px; height:640px; background:rgba(255,255,255,0.02); border-radius:50%;"></div>
-          <div style="position:absolute; right:-120px; bottom:-160px; width:520px; height:520px; background:rgba(0,117,74,0.15); border-radius:50%;"></div>
-        </section>
-
-        <!-- PORTFOLIO — White section -->
-        <section style="background:#fff; padding:80px 96px 96px;">
-          <div style="margin-bottom:56px; display:flex; justify-content:space-between; align-items:flex-end;">
-            <div>
-              <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00754A; margin-bottom:14px;">Portfolio</div>
-              <h2 style="font-size:40px; font-weight:800; color:rgba(0,0,0,0.87); letter-spacing:-0.025em; line-height:1.1; margin:0; font-family:'Manrope',sans-serif;">테크셀이 만든 앱</h2>
-            </div>
-            <span style="font-size:15px; font-weight:600; color:#00754A; letter-spacing:-0.01em; cursor:pointer;">전체 보기 →</span>
-          </div>
-
-          <!-- App grid 1b — 3-column -->
-          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
-            <!-- YAM featured -->
-            <div style="background:#1E3932; border-radius:20px; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; min-height:320px; position:relative; overflow:hidden;">
-              <div style="position:absolute; right:-40px; bottom:-40px; width:200px; height:200px; background:rgba(255,255,255,0.05); border-radius:50%;"></div>
-              <div>
-                <div style="width:72px; height:72px; background:rgba(255,255,255,0.12); border-radius:18px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
-                  <span style="font-size:34px; font-weight:800; color:#fff; font-family:'Manrope',sans-serif; letter-spacing:-2px; line-height:1;">Y</span>
-                </div>
-                <div style="font-size:28px; font-weight:800; color:#fff; letter-spacing:-0.025em; margin-bottom:10px; font-family:'Manrope',sans-serif;">YAM</div>
-                <div style="font-size:14px; color:rgba(255,255,255,0.65); letter-spacing:-0.01em; line-height:1.6;">GPS 기반 실시간<br>내 주변 화장실 안내 앱</div>
-              </div>
-              <div style="display:flex; align-items:center; justify-content:space-between;">
-                <div style="display:flex; gap:8px;">
-                  <span style="font-size:11px; font-weight:600; background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.75); padding:4px 12px; border-radius:50px;">생활편의</span>
-                  <span style="font-size:11px; font-weight:600; background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.75); padding:4px 12px; border-radius:50px;">무료</span>
-                </div>
-                <span style="font-size:20px; color:rgba(255,255,255,0.6);">→</span>
-              </div>
-            </div>
-
-            <!-- Coming soon 1 -->
-            <div style="background:#f2f0eb; border-radius:20px; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; min-height:320px; position:relative; overflow:hidden; border:1.5px dashed rgba(0,0,0,0.12);">
-              <div>
-                <div style="width:72px; height:72px; background:rgba(0,0,0,0.06); border-radius:18px; margin-bottom:24px;"></div>
-                <div style="font-size:24px; font-weight:800; color:rgba(0,0,0,0.18); letter-spacing:-0.025em; margin-bottom:10px; font-family:'Manrope',sans-serif;">Coming Soon</div>
-                <div style="font-size:14px; color:rgba(0,0,0,0.28); letter-spacing:-0.01em; line-height:1.6;">새로운 앱이 곧 출시됩니다</div>
-              </div>
-              <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,0,0,0.06); border-radius:50px; padding:6px 14px; align-self:flex-start;">
-                <div style="width:6px; height:6px; background:rgba(0,0,0,0.25); border-radius:50%;"></div>
-                <span style="font-size:11px; font-weight:700; color:rgba(0,0,0,0.35); letter-spacing:0.06em; text-transform:uppercase;">준비 중</span>
-              </div>
-            </div>
-
-            <!-- Coming soon 2 -->
-            <div style="background:#f2f0eb; border-radius:20px; padding:44px 40px; display:flex; flex-direction:column; justify-content:space-between; min-height:320px; position:relative; overflow:hidden; border:1.5px dashed rgba(0,0,0,0.12);">
-              <div>
-                <div style="width:72px; height:72px; background:rgba(0,0,0,0.06); border-radius:18px; margin-bottom:24px;"></div>
-                <div style="font-size:24px; font-weight:800; color:rgba(0,0,0,0.18); letter-spacing:-0.025em; margin-bottom:10px; font-family:'Manrope',sans-serif;">Coming Soon</div>
-                <div style="font-size:14px; color:rgba(0,0,0,0.28); letter-spacing:-0.01em; line-height:1.6;">새로운 앱이 곧 출시됩니다</div>
-              </div>
-              <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(0,0,0,0.06); border-radius:50px; padding:6px 14px; align-self:flex-start;">
-                <div style="width:6px; height:6px; background:rgba(0,0,0,0.25); border-radius:50%;"></div>
-                <span style="font-size:11px; font-weight:700; color:rgba(0,0,0,0.35); letter-spacing:0.06em; text-transform:uppercase;">준비 중</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- STATS — cream strip 1b -->
-        <section style="background:#f2f0eb; padding:56px 96px; display:flex; gap:0; border-top:1px solid rgba(0,0,0,0.07); border-bottom:1px solid rgba(0,0,0,0.07);">
-          <div style="flex:1; text-align:center; padding:16px 0;">
-            <div style="font-size:52px; font-weight:800; color:#1E3932; letter-spacing:-0.04em; line-height:1; font-family:'Manrope',sans-serif;">3+</div>
-            <div style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.42); margin-top:10px; letter-spacing:0.06em; text-transform:uppercase;">출시 앱</div>
-          </div>
-          <div style="width:1px; background:rgba(0,0,0,0.09); margin:8px 0;"></div>
-          <div style="flex:1; text-align:center; padding:16px 0;">
-            <div style="font-size:52px; font-weight:800; color:#1E3932; letter-spacing:-0.04em; line-height:1; font-family:'Manrope',sans-serif;">10K+</div>
-            <div style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.42); margin-top:10px; letter-spacing:0.06em; text-transform:uppercase;">누적 다운로드</div>
-          </div>
-          <div style="width:1px; background:rgba(0,0,0,0.09); margin:8px 0;"></div>
-          <div style="flex:1; text-align:center; padding:16px 0;">
-            <div style="font-size:52px; font-weight:800; color:#1E3932; letter-spacing:-0.04em; line-height:1; font-family:'Manrope',sans-serif;">4.8★</div>
-            <div style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.42); margin-top:10px; letter-spacing:0.06em; text-transform:uppercase;">앱스토어 평점</div>
-          </div>
-          <div style="width:1px; background:rgba(0,0,0,0.09); margin:8px 0;"></div>
-          <div style="flex:1; text-align:center; padding:16px 0;">
-            <div style="font-size:52px; font-weight:800; color:#1E3932; letter-spacing:-0.04em; line-height:1; font-family:'Manrope',sans-serif;">2020</div>
-            <div style="font-size:12px; font-weight:600; color:rgba(0,0,0,0.42); margin-top:10px; letter-spacing:0.06em; text-transform:uppercase;">설립연도</div>
-          </div>
-        </section>
-
-        <!-- ABOUT 1b — split, cream bg -->
-        <section style="background:#fff; padding:100px 96px; display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center;">
-          <div>
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00754A; margin-bottom:24px;">About TechSell</div>
-            <h2 style="font-size:50px; font-weight:800; color:#1E3932; letter-spacing:-0.03em; line-height:1.08; margin:0 0 32px; font-family:'Manrope',sans-serif;">불편함을 발견하고<br>앱으로 해결합니다</h2>
-            <p style="font-size:18px; color:rgba(0,0,0,0.56); letter-spacing:-0.01em; line-height:1.78; margin:0 0 44px;">테크셀은 일상 속 꼭 필요하지만 존재하지 않는 앱을 직접 발굴하고 개발하는 모바일 앱 스튜디오입니다. 빠른 실행력과 사용자 중심 설계로 진짜 문제를 해결합니다.</p>
-            <button style="background:#1E3932; color:#fff; border:none; border-radius:50px; padding:16px 36px; font-size:15px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">더 알아보기 →</button>
-          </div>
-          <div style="display:flex; flex-direction:column; gap:0;">
-            <div style="padding:32px 0; border-bottom:1px solid rgba(0,0,0,0.08); display:flex; gap:24px; align-items:flex-start;">
-              <div style="width:48px; height:48px; background:#d4e9e2; border-radius:12px; flex:0 0 48px; display:flex; align-items:center; justify-content:center;">
-                <div style="width:20px; height:20px; background:#1E3932; border-radius:4px;"></div>
-              </div>
-              <div>
-                <div style="font-size:18px; font-weight:700; color:#1E3932; letter-spacing:-0.015em; margin-bottom:8px;">빠른 실행</div>
-                <div style="font-size:15px; color:rgba(0,0,0,0.52); letter-spacing:-0.01em; line-height:1.65;">아이디어에서 출시까지 최단 시간으로 검증합니다</div>
-              </div>
-            </div>
-            <div style="padding:32px 0; border-bottom:1px solid rgba(0,0,0,0.08); display:flex; gap:24px; align-items:flex-start;">
-              <div style="width:48px; height:48px; background:#d4e9e2; border-radius:12px; flex:0 0 48px; display:flex; align-items:center; justify-content:center;">
-                <div style="width:20px; height:20px; background:#006241; border-radius:50%;"></div>
-              </div>
-              <div>
-                <div style="font-size:18px; font-weight:700; color:#1E3932; letter-spacing:-0.015em; margin-bottom:8px;">사용자 중심</div>
-                <div style="font-size:15px; color:rgba(0,0,0,0.52); letter-spacing:-0.01em; line-height:1.65;">진짜 불편함에서 시작해 실제로 쓰이는 앱을 만듭니다</div>
-              </div>
-            </div>
-            <div style="padding:32px 0; display:flex; gap:24px; align-items:flex-start;">
-              <div style="width:48px; height:48px; background:#d4e9e2; border-radius:12px; flex:0 0 48px; display:flex; align-items:center; justify-content:center;">
-                <div style="width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-bottom:18px solid #00754A;"></div>
-              </div>
-              <div>
-                <div style="font-size:18px; font-weight:700; color:#1E3932; letter-spacing:-0.015em; margin-bottom:8px;">지속적 개선</div>
-                <div style="font-size:15px; color:rgba(0,0,0,0.52); letter-spacing:-0.01em; line-height:1.65;">출시 후에도 사용자 피드백으로 계속 발전합니다</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- CTA 1b -->
-        <section style="background:#1E3932; padding:88px 96px; display:flex; align-items:center; justify-content:space-between;">
-          <div>
-            <div style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:18px;">Contact</div>
-            <h2 style="font-size:46px; font-weight:800; color:#fff; letter-spacing:-0.03em; line-height:1.1; margin:0; font-family:'Manrope',sans-serif;">앱 개발 · 협업 ·<br>비즈니스 문의</h2>
-          </div>
-          <div style="display:flex; gap:16px;">
-            <button style="background:#d4e9e2; color:#1E3932; border:none; border-radius:50px; padding:18px 48px; font-size:16px; font-weight:700; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">문의하기</button>
-            <button style="background:transparent; color:rgba(255,255,255,0.8); border:1.5px solid rgba(255,255,255,0.3); border-radius:50px; padding:18px 40px; font-size:16px; font-weight:600; font-family:'Manrope',sans-serif; letter-spacing:-0.01em; cursor:pointer;">채용 공고</button>
-          </div>
-        </section>
-
-        <!-- FOOTER 1b -->
-        <footer style="background:#0d1f1b; padding:56px 96px 40px;">
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:48px;">
-            <div>
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
-                <svg width="30" height="30" viewBox="0 0 100 100">
-                  <rect x="0" y="0" width="100" height="100" rx="22" fill="rgba(255,255,255,0.1)"></rect>
-                  <text x="6" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="800" fill="white" letter-spacing="-3">T</text>
-                  <text x="47" y="66" font-family="Manrope,sans-serif" font-size="54" font-weight="400" fill="white">S</text>
-                </svg>
-                <span style="font-size:16px; font-weight:700; color:#fff; letter-spacing:-0.01em;">TechSell</span>
-              </div>
-              <div style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.75; letter-spacing:-0.01em;">일상의 불편함을 해결하는 앱 스튜디오<br>서울특별시 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f3fffee4f1f3e4d0e4f5f3f8e3f5fcfcbefbe2">[email&#160;protected]</a></div>
-            </div>
-            <div style="display:flex; gap:80px;">
-              <div>
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:16px;">제품</div>
-                <div style="display:flex; flex-direction:column; gap:12px;">
-                  <a style="font-size:14px; color:rgba(255,255,255,0.6); letter-spacing:-0.01em; cursor:pointer;">YAM</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.6); letter-spacing:-0.01em; cursor:pointer;">포트폴리오</a>
-                </div>
-              </div>
-              <div>
-                <div style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:16px;">회사</div>
-                <div style="display:flex; flex-direction:column; gap:12px;">
-                  <a style="font-size:14px; color:rgba(255,255,255,0.6); letter-spacing:-0.01em; cursor:pointer;">회사소개</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.6); letter-spacing:-0.01em; cursor:pointer;">채용</a>
-                  <a style="font-size:14px; color:rgba(255,255,255,0.6); letter-spacing:-0.01em; cursor:pointer;">문의</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:24px; display:flex; justify-content:space-between; align-items:center;">
-            <div style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:-0.01em;">© 2024 TechSell. All rights reserved.</div>
-            <div style="display:flex; gap:24px;">
-              <a style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:-0.01em; cursor:pointer;">개인정보처리방침</a>
-              <a style="font-size:12px; color:rgba(255,255,255,0.25); letter-spacing:-0.01em; cursor:pointer;">이용약관</a>
-            </div>
-          </div>
-        </footer>
-
+      <!-- Hamburger -->
+      <div style="display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:4px;">
+        <div style="width:22px; height:2px; background:#0f172a; border-radius:2px;"></div>
+        <div style="width:15px; height:2px; background:#0f172a; border-radius:2px;"></div>
+        <div style="width:22px; height:2px; background:#0f172a; border-radius:2px;"></div>
       </div>
-    </div><!-- /1b -->
+    </div>
+  </nav>
 
-  </div><!-- /dv-opts -->
-</section><!-- /t1 -->
+  <!-- HERO -->
+  <section style="padding:52px 24px 48px; background:linear-gradient(160deg,#0f172a 0%,#1e3a5f 60%,#1a4f8a 100%); position:relative; overflow:hidden;">
+    <div style="position:absolute; right:-60px; top:-60px; width:260px; height:260px; background:rgba(61,184,245,0.08); border-radius:50%;"></div>
+    <div style="position:absolute; left:-80px; bottom:-60px; width:280px; height:280px; background:rgba(37,99,235,0.1); border-radius:50%;"></div>
+    <div style="display:inline-flex; align-items:center; gap:7px; background:rgba(255,255,255,0.1); border-radius:50px; padding:6px 14px; margin-bottom:24px; position:relative; z-index:1;">
+      <div style="width:6px; height:6px; background:#3db8f5; border-radius:50%;"></div>
+      <span style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Mobile App Studio</span>
+    </div>
+    <h1 style="font-size:38px; font-weight:800; color:#fff; letter-spacing:-0.03em; line-height:1.08; margin:0 0 16px; font-family:'Manrope',sans-serif; position:relative; z-index:1;">{{ heroTitle }}<br><span style="background:linear-gradient(90deg,#3db8f5,#60a5fa); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">{{ heroHighlight }}</span></h1>
+    <p style="font-size:14px; color:rgba(255,255,255,0.62); letter-spacing:-0.01em; line-height:1.75; margin:0 0 36px; position:relative; z-index:1;">{{ heroSub }}</p>
+    <div style="display:flex; gap:10px; position:relative; z-index:1;">
+      <button style="background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:50px; padding:11px 20px; font-size:13px; font-weight:600; font-family:'Manrope',sans-serif; cursor:pointer;">{{ btnPortfolio }}</button>
+      <button style="background:#3db8f5; color:#0f172a; border:none; border-radius:50px; padding:11px 22px; font-size:13px; font-weight:700; font-family:'Manrope',sans-serif; cursor:pointer;">{{ btnContact }}</button>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:#fff; display:flex; border-bottom:1px solid rgba(0,0,0,0.06);">
+    <div style="flex:1; text-align:center; padding:20px 8px;">
+      <div style="font-size:24px; font-weight:800; color:#0f172a; letter-spacing:-0.03em; line-height:1;">3+</div>
+      <div style="font-size:10px; font-weight:600; color:rgba(0,0,0,0.4); margin-top:5px; letter-spacing:0.05em; text-transform:uppercase;">{{ statApps }}</div>
+    </div>
+    <div style="width:1px; background:rgba(0,0,0,0.06);"></div>
+    <div style="flex:1; text-align:center; padding:20px 8px;">
+      <div style="font-size:24px; font-weight:800; color:#0f172a; letter-spacing:-0.03em; line-height:1;">10K+</div>
+      <div style="font-size:10px; font-weight:600; color:rgba(0,0,0,0.4); margin-top:5px; letter-spacing:0.05em; text-transform:uppercase;">{{ statDl }}</div>
+    </div>
+    <div style="width:1px; background:rgba(0,0,0,0.06);"></div>
+    <div style="flex:1; text-align:center; padding:20px 8px;">
+      <div style="font-size:24px; font-weight:800; color:#0f172a; letter-spacing:-0.03em; line-height:1;">4.8★</div>
+      <div style="font-size:10px; font-weight:600; color:rgba(0,0,0,0.4); margin-top:5px; letter-spacing:0.05em; text-transform:uppercase;">{{ statRating }}</div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section style="background:#f8fafc; padding:44px 20px 36px;">
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#2563eb; margin-bottom:8px;">Portfolio</div>
+    <h2 style="font-size:26px; font-weight:800; color:#0f172a; letter-spacing:-0.025em; line-height:1.15; margin:0 0 24px; font-family:'Manrope',sans-serif;">{{ portTitle }}</h2>
+
+    <!-- YAM CARD -->
+    <div style="background:#fff; border-radius:20px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.08); margin-bottom:12px;">
+      <div style="background:linear-gradient(135deg,#3db8f5 0%,#2a78d6 55%,#2563eb 100%); padding:28px 22px 22px; display:flex; align-items:center; gap:16px;">
+        <img src="./yam-icon.png" alt="YAM" style="width:68px; height:68px; border-radius:17px; flex:0 0 68px; box-shadow:0 8px 20px rgba(0,0,0,0.22);">
+        <div>
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:5px;">
+            <span style="font-size:22px; font-weight:800; color:#fff; letter-spacing:-0.02em; font-family:'Manrope',sans-serif;">YAM</span>
+            <span style="background:rgba(255,255,255,0.2); color:#fff; font-size:10px; font-weight:700; padding:3px 9px; border-radius:50px; letter-spacing:0.04em;">{{ free }}</span>
+          </div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.82); line-height:1.5; letter-spacing:-0.01em;">{{ yamDesc }}</div>
+        </div>
+      </div>
+      <div style="padding:20px 22px 22px;">
+        <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px;">
+          <span style="font-size:11px; font-weight:600; background:#eff6ff; color:#2563eb; padding:4px 12px; border-radius:50px;">{{ tag1 }}</span>
+          <span style="font-size:11px; font-weight:600; background:#eff6ff; color:#2563eb; padding:4px 12px; border-radius:50px;">{{ tag2 }}</span>
+          <span style="font-size:11px; font-weight:600; background:#eff6ff; color:#2563eb; padding:4px 12px; border-radius:50px;">{{ tag3 }}</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px;">
+          <a href="https://apps.apple.com/app/id6777852410" target="_blank" style="display:flex; align-items:center; gap:13px; background:#0f172a; color:#fff; border-radius:13px; padding:13px 18px; cursor:pointer;">
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="white"><path d="M15.05 13.43c-.03-3.11 2.54-4.61 2.65-4.68-1.44-2.11-3.68-2.4-4.48-2.43-1.91-.19-3.73 1.12-4.7 1.12-.97 0-2.47-1.1-4.06-1.07-2.1.03-4.03 1.22-5.11 3.08-2.18 3.78-.56 9.37 1.57 12.43 1.04 1.5 2.28 3.18 3.91 3.12 1.57-.06 2.17-.99 4.07-.99 1.9 0 2.44.99 4.1.96 1.69-.03 2.77-1.53 3.8-3.04.32-.47.58-.95.77-1.45-2.9-1.11-2.52-5.05-2.52-5.05zm-2.37-8.78c.87-1.05 1.45-2.5 1.29-3.95-1.24.05-2.75.83-3.64 1.87-.8.92-1.5 2.41-1.31 3.82 1.38.11 2.79-.7 3.66-1.74z"/></svg>
+            <div>
+              <div style="font-size:9px; font-weight:500; color:rgba(255,255,255,0.6); letter-spacing:0.03em; line-height:1;">{{ appStoreLabel }}</div>
+              <div style="font-size:16px; font-weight:700; letter-spacing:-0.02em; line-height:1.3;">App Store</div>
+            </div>
+            <svg style="margin-left:auto;" width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div style="display:flex; align-items:center; gap:13px; background:#f1f5f9; border-radius:13px; padding:13px 18px;">
+            <svg width="22" height="24" viewBox="0 0 22 24" fill="none"><path d="M1.1 0.5C0.6 1 0.3 1.7 0.3 2.6v18.8c0 .9.3 1.6.8 2.1l.1.1 10.5-10.5v-.3L1.1.5z" fill="#94a3b8"/><path d="M14.9 15.2L11.7 12v-.3l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.3l-3.9 2.1z" fill="#94a3b8"/><path d="M15 15.1L11.7 11.8 1.1 22.4c.4.4 1 .4 1.7.1L15 15.1z" fill="#94a3b8" opacity=".7"/><path d="M15 8.5L2.8 2.1C2.1 1.7 1.5 1.8 1.1 2.2l10.6 10.6L15 8.5z" fill="#94a3b8" opacity=".5"/></svg>
+            <div>
+              <div style="font-size:9px; font-weight:500; color:rgba(0,0,0,0.35); letter-spacing:0.03em; line-height:1;">{{ playLabel }}</div>
+              <div style="font-size:16px; font-weight:700; letter-spacing:-0.02em; line-height:1.3; color:#94a3b8;">Google Play</div>
+            </div>
+            <span style="margin-left:auto; font-size:10px; font-weight:700; background:#e2e8f0; color:#94a3b8; padding:4px 10px; border-radius:50px; white-space:nowrap; text-transform:uppercase; letter-spacing:0.04em;">{{ comingSoon }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coming soon -->
+    <div style="background:#fff; border-radius:16px; padding:22px 20px; display:flex; align-items:center; gap:14px; border:1.5px dashed rgba(0,0,0,0.1);">
+      <div style="width:52px; height:52px; background:#f1f5f9; border-radius:13px; flex:0 0 52px;"></div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:rgba(0,0,0,0.2); letter-spacing:-0.02em; margin-bottom:3px;">{{ comingTitle }}</div>
+        <div style="font-size:12px; color:rgba(0,0,0,0.28);">{{ comingDesc }}</div>
+      </div>
+      <span style="margin-left:auto; font-size:10px; font-weight:700; background:#f1f5f9; color:#94a3b8; padding:4px 10px; border-radius:50px; white-space:nowrap; text-transform:uppercase; letter-spacing:0.04em;">{{ comingSoon }}</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section style="background:#fff; padding:44px 20px;">
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#2563eb; margin-bottom:8px;">About</div>
+    <h2 style="font-size:26px; font-weight:800; color:#0f172a; letter-spacing:-0.025em; line-height:1.15; margin:0 0 14px; font-family:'Manrope',sans-serif;">{{ aboutTitle }}</h2>
+    <p style="font-size:14px; color:rgba(0,0,0,0.52); line-height:1.78; margin:0 0 28px; letter-spacing:-0.01em;">{{ aboutDesc }}</p>
+    <div style="display:flex; flex-direction:column; gap:0;">
+      <div style="padding:16px 0; border-bottom:1px solid rgba(0,0,0,0.06); display:flex; gap:14px; align-items:center;">
+        <div style="width:40px; height:40px; background:#eff6ff; border-radius:10px; flex:0 0 40px; display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1L11.5 6.5H17L12.5 10L14.5 16L9 12.5L3.5 16L5.5 10L1 6.5H6.5L9 1Z" fill="#2563eb"/></svg>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:2px;">{{ feat1Title }}</div>
+          <div style="font-size:12px; color:rgba(0,0,0,0.46); line-height:1.5;">{{ feat1Desc }}</div>
+        </div>
+      </div>
+      <div style="padding:16px 0; border-bottom:1px solid rgba(0,0,0,0.06); display:flex; gap:14px; align-items:center;">
+        <div style="width:40px; height:40px; background:#eff6ff; border-radius:10px; flex:0 0 40px; display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#2563eb" stroke-width="2"/><circle cx="9" cy="9" r="3" fill="#2563eb"/></svg>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:2px;">{{ feat2Title }}</div>
+          <div style="font-size:12px; color:rgba(0,0,0,0.46); line-height:1.5;">{{ feat2Desc }}</div>
+        </div>
+      </div>
+      <div style="padding:16px 0; display:flex; gap:14px; align-items:center;">
+        <div style="width:40px; height:40px; background:#eff6ff; border-radius:10px; flex:0 0 40px; display:flex; align-items:center; justify-content:center;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M9 3l6 6-6 6" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <div style="font-size:14px; font-weight:700; color:#0f172a; margin-bottom:2px;">{{ feat3Title }}</div>
+          <div style="font-size:12px; color:rgba(0,0,0,0.46); line-height:1.5;">{{ feat3Desc }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); padding:44px 20px; text-align:center;">
+    <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:12px;">Contact</div>
+    <h2 style="font-size:26px; font-weight:800; color:#fff; letter-spacing:-0.025em; line-height:1.2; margin:0 0 24px; font-family:'Manrope',sans-serif;">{{ ctaTitle }}</h2>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <button style="background:#3db8f5; color:#0f172a; border:none; border-radius:13px; padding:16px; font-size:15px; font-weight:700; font-family:'Manrope',sans-serif; cursor:pointer; width:100%;">{{ btnContact }}</button>
+      <button style="background:transparent; color:rgba(255,255,255,0.7); border:1.5px solid rgba(255,255,255,0.2); border-radius:13px; padding:15px; font-size:15px; font-weight:600; font-family:'Manrope',sans-serif; cursor:pointer; width:100%;">{{ btnHiring }}</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0a0f1a; padding:32px 20px 36px;">
+    <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+      <svg width="28" height="28" viewBox="0 0 100 100">
+        <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3db8f5"/><stop offset="100%" stop-color="#2563eb"/></linearGradient></defs>
+        <rect x="0" y="0" width="100" height="100" rx="22" fill="url(#fg)"></rect>
+        <text x="8" y="66" font-family="Manrope,sans-serif" font-size="50" font-weight="800" fill="white" letter-spacing="-2">T</text>
+        <text x="48" y="66" font-family="Manrope,sans-serif" font-size="50" font-weight="400" fill="white">S</text>
+      </svg>
+      <span style="font-size:15px; font-weight:700; color:#fff;">TechSell</span>
+    </div>
+    <div style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.75; margin-bottom:22px;">{{ footerDesc }}</div>
+    <div style="display:flex; gap:20px; margin-bottom:24px; flex-wrap:wrap;">
+      <a style="font-size:13px; color:rgba(255,255,255,0.5); cursor:pointer;">{{ navAbout }}</a>
+      <a style="font-size:13px; color:rgba(255,255,255,0.5); cursor:pointer;">{{ navPortfolio }}</a>
+      <a style="font-size:13px; color:rgba(255,255,255,0.5); cursor:pointer;">{{ navHiring }}</a>
+      <a style="font-size:13px; color:rgba(255,255,255,0.5); cursor:pointer;">{{ navContact }}</a>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.07); padding-top:18px;">
+      <div style="font-size:11px; color:rgba(255,255,255,0.2);">© 2024 TechSell. All rights reserved.</div>
+    </div>
+  </footer>
+
+</div>
+
 </x-dc>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 420, &quot;height&quot;: 900}}">
+class Component extends DCLogic {
+  state = { lang: 'ko' };
+
+  renderVals() {
+    const ko = this.state.lang === 'ko';
+    const setKo = () => this.setState({ lang: 'ko' });
+    const setEn = () => this.setState({ lang: 'en' });
+
+    const koBg     = ko ? '#fff' : 'transparent';
+    const koColor  = ko ? '#0f172a' : 'rgba(0,0,0,0.4)';
+    const koShadow = ko ? '0 1px 4px rgba(0,0,0,0.12)' : 'none';
+    const enBg     = !ko ? '#fff' : 'transparent';
+    const enColor  = !ko ? '#0f172a' : 'rgba(0,0,0,0.4)';
+    const enShadow = !ko ? '0 1px 4px rgba(0,0,0,0.12)' : 'none';
+
+    const t = {
+      ko: {
+        heroTitle:     '일상의 불편함을',
+        heroHighlight: '해결합니다',
+        heroSub:       '꼭 필요한데 마땅한 앱이 없을 때,\n테크셀이 만든 앱이 해결해 드립니다',
+        btnPortfolio:  '포트폴리오',
+        btnContact:    '문의하기',
+        btnHiring:     '채용 공고',
+        statApps:      '출시 앱',
+        statDl:        '다운로드',
+        statRating:    '평점',
+        portTitle:     '테크셀이 만든 앱',
+        free:          '무료',
+        yamDesc:       '내 주변 화장실 찾기\nGPS 실시간 위치 안내',
+        tag1:          '위치 서비스',
+        tag2:          '지도',
+        tag3:          '생활편의',
+        appStoreLabel: 'Download on the',
+        playLabel:     'GET IT ON',
+        comingSoon:    '준비 중',
+        comingTitle:   'Coming Soon',
+        comingDesc:    '새로운 앱이 곧 출시됩니다',
+        aboutTitle:    '불편함을 발견하고\n앱으로 해결합니다',
+        aboutDesc:     '테크셀은 일상 속 꼭 필요하지만 존재하지 않는 앱을 직접 발굴하고 개발하는 모바일 앱 스튜디오입니다.',
+        feat1Title:    '빠른 실행',
+        feat1Desc:     '아이디어에서 출시까지 최단 시간으로',
+        feat2Title:    '사용자 중심',
+        feat2Desc:     '진짜 불편함에서 시작해 실제로 쓰이는 앱',
+        feat3Title:    '지속적 개선',
+        feat3Desc:     '출시 후에도 피드백으로 계속 발전합니다',
+        ctaTitle:      '앱 개발 · 협업 ·\n비즈니스 문의',
+        footerDesc:    '일상의 불편함을 해결하는 앱 스튜디오\ncontact@techsell.kr',
+        navAbout:      '회사소개',
+        navPortfolio:  '포트폴리오',
+        navHiring:     '채용',
+        navContact:    '문의',
+      },
+      en: {
+        heroTitle:     'We solve everyday',
+        heroHighlight: 'inconveniences',
+        heroSub:       "When you need an app that doesn't exist yet,\nTechSell builds it for you.",
+        btnPortfolio:  'Portfolio',
+        btnContact:    'Contact Us',
+        btnHiring:     'We\'re Hiring',
+        statApps:      'Apps',
+        statDl:        'Downloads',
+        statRating:    'Rating',
+        portTitle:     'Apps by TechSell',
+        free:          'Free',
+        yamDesc:       'Find nearby restrooms\nReal-time GPS guidance',
+        tag1:          'Location',
+        tag2:          'Maps',
+        tag3:          'Lifestyle',
+        appStoreLabel: 'Download on the',
+        playLabel:     'GET IT ON',
+        comingSoon:    'Soon',
+        comingTitle:   'Coming Soon',
+        comingDesc:    'A new app is on the way',
+        aboutTitle:    'We find problems and\nsolve them with apps',
+        aboutDesc:     'TechSell is a mobile app studio that discovers unmet needs in everyday life and builds apps to address them.',
+        feat1Title:    'Move Fast',
+        feat1Desc:     'From idea to launch in the shortest time possible',
+        feat2Title:    'User-Centric',
+        feat2Desc:     'We build apps people actually use and need',
+        feat3Title:    'Always Improving',
+        feat3Desc:     'We keep evolving based on user feedback',
+        ctaTitle:      'App Dev · Collab ·\nBusiness Inquiry',
+        footerDesc:    'A mobile app studio solving everyday problems\ncontact@techsell.kr',
+        navAbout:      'About',
+        navPortfolio:  'Portfolio',
+        navHiring:     'Careers',
+        navContact:    'Contact',
+      }
+    };
+
+    const d = t[this.state.lang];
+    return {
+      setKo, setEn,
+      koBg, koColor, koShadow,
+      enBg, enColor, enShadow,
+      ...d
+    };
+  }
+}
+
+</script>
+</body>
 </html>

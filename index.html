@@ -442,6 +442,31 @@
     </div>
   </section>
 
+  <!-- TRAVEL UPDATE -->
+  <section class="portfolio" id="travel" style="padding-top:8px;">
+    <div class="eyebrow reveal">Update</div>
+    <h2 class="section-title reveal"><span id="travelTitle">여행 가서도</span><br><span class="highlight" id="travelHighlight">YAM</span></h2>
+    <p class="reveal" style="font-size:15px;color:var(--ink-60);line-height:1.7;margin-bottom:24px;word-break:keep-all;letter-spacing:-0.01em;" id="travelDesc">일본, 대만 화장실 정보가 새로 추가됐어요.<br>해외 여행 중 급할 때도, YAM 하나면 충분해요.</p>
+    <div class="app-card reveal">
+      <div class="app-card-body" style="padding-top:20px;">
+        <div class="feature-item" style="border-bottom:1px solid rgba(16,36,29,.08);padding:15px 0;">
+          <div class="feature-icon" style="background:var(--paper);border:1px solid rgba(16,36,29,.08);font-size:20px;">🇯🇵</div>
+          <div>
+            <div class="feature-title" style="color:var(--ink);" id="travelJpTitle">일본</div>
+            <div class="feature-desc-t" style="color:var(--ink-60);" id="travelJpDesc">도쿄·오사카 등 주요 도시 화장실 위치 추가</div>
+          </div>
+        </div>
+        <div class="feature-item" style="padding:15px 0;">
+          <div class="feature-icon" style="background:var(--paper);border:1px solid rgba(16,36,29,.08);font-size:20px;">🇹🇼</div>
+          <div>
+            <div class="feature-title" style="color:var(--ink);" id="travelTwTitle">대만</div>
+            <div class="feature-desc-t" style="color:var(--ink-60);" id="travelTwDesc">타이베이·가오슝 등 주요 도시 화장실 위치 추가</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT -->
   <section class="about" id="about">
     <div class="eyebrow reveal">About</div>
@@ -520,6 +545,10 @@ const strings = {
     tag1:'위치 서비스', tag2:'지도', tag3:'생활편의',
     appStoreLabel:'Download on the', playLabel:'GET IT ON',
     comingSoon:'준비 중', comingTitle:'Coming Soon', comingDesc:'새로운 앱이 곧 출시됩니다',
+    travelTitle:'여행 가서도', travelHighlight:'YAM',
+    travelDesc:'일본, 대만 화장실 정보가 새로 추가됐어요.\n해외 여행 중 급할 때도, YAM 하나면 충분해요.',
+    travelJpTitle:'일본', travelJpDesc:'도쿄·오사카 등 주요 도시 화장실 위치 추가',
+    travelTwTitle:'대만', travelTwDesc:'타이베이·가오슝 등 주요 도시 화장실 위치 추가',
     aboutTitle:'불편함을 발견하고\n앱으로 해결합니다',
     aboutDesc:'테크셀은 일상 속 꼭 필요하지만 존재하지 않는 앱을 직접 발굴하고 개발하는 모바일 앱 스튜디오입니다.',
     feat1Title:'빠른 실행',   feat1Desc:'아이디어에서 출시까지 최단 시간으로',
@@ -543,6 +572,10 @@ const strings = {
     tag1:'Location', tag2:'Maps', tag3:'Lifestyle',
     appStoreLabel:'Download on the', playLabel:'GET IT ON',
     comingSoon:'Soon', comingTitle:'Coming Soon', comingDesc:'A new app is on the way',
+    travelTitle:'On your travels,', travelHighlight:'YAM',
+    travelDesc:"Now with restroom data for Japan and Taiwan.\nWherever you're traveling, YAM has you covered.",
+    travelJpTitle:'Japan', travelJpDesc:'Added restroom locations in Tokyo, Osaka, and more',
+    travelTwTitle:'Taiwan', travelTwDesc:'Added restroom locations in Taipei, Kaohsiung, and more',
     aboutTitle:'We find problems\nand solve them with apps',
     aboutDesc:'TechSell is a mobile app studio that discovers unmet needs in everyday life and builds apps to address them.',
     feat1Title:'Move Fast',        feat1Desc:'From idea to launch in the shortest time possible',
@@ -590,6 +623,13 @@ function setLang(lang) {
   setText('comingSoon2',  s.comingSoon);
   setText('comingTitle',  s.comingTitle);
   setText('comingDesc',   s.comingDesc);
+  setText('travelTitle',  s.travelTitle);
+  setText('travelHighlight', s.travelHighlight);
+  setHtml('travelDesc',   s.travelDesc);
+  setText('travelJpTitle',s.travelJpTitle);
+  setText('travelJpDesc', s.travelJpDesc);
+  setText('travelTwTitle',s.travelTwTitle);
+  setText('travelTwDesc', s.travelTwDesc);
   setHtml('aboutTitle',   s.aboutTitle);
   setText('aboutDesc',    s.aboutDesc);
   setText('feat1Title',s.feat1Title); setText('feat1Desc',s.feat1Desc);

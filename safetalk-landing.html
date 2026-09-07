@@ -70,6 +70,9 @@
 
   /* ── Nav ── */
   .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--muted); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+  .back-link svg { flex: 0 0 auto; }
   .logo { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.2px; }
   .logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); }
   .nav-links { display: flex; gap: 28px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
@@ -174,6 +177,10 @@
 
   <div class="wrap">
     <nav class="nav">
+      <a class="back-link" href="index.html">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        테크셀 홈으로
+      </a>
       <div class="logo"><span class="dot"></span>세이프톡</div>
       <div class="nav-links">
         <a href="#features">기능</a>
@@ -286,6 +293,7 @@
     <div class="wrap footer-row">
       <div class="copy">© 2026 세이프톡. 출시 준비 중입니다.</div>
       <div class="footer-links">
+        <a href="index.html">테크셀 홈으로</a>
         <a href="mailto:lsj1092@gmail.com">문의하기</a>
         <a href="safetalk-privacy.html">개인정보처리방침</a>
       </div>

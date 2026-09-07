@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>감결 鑑訣 — 손금으로 보는 이번 주 번호</title>
+<meta name="description" content="손바닥을 촬영하면 손금선을 분석해 이번 주 번호 6개와 그 근거, 손금 풀이 보고서를 보여주는 오락 앱. 사진은 기기에서만 처리되고 저장·전송되지 않습니다. 오락 목적이며 당첨과 무관합니다.">
+<style>
+  :root {
+    --canvas: #FFFFFF;
+    --canvas-soft: #F7F1E4;
+    --canvas-strong: #EFE7D4;
+    --ink: #231A13;
+    --body: #4a3c2f;
+    --muted: #6D5A45;
+    --muted-soft: #9B8A70;
+    --hairline: #E3D8C2;
+    --hairline-soft: #ece3cf;
+    --primary: #B23A28;
+    --primary-active: #8f2e20;
+    --primary-tint: #FBEAE6;
+    --on-primary: #FAF7EF;
+    --ink-band: #231A13;
+    --cheong: #1F5C73;
+    --hwang: #C8963C;
+    --shadow: rgba(35,26,19,.03) 0 0 0 1px, rgba(35,26,19,.06) 0 2px 8px, rgba(35,26,19,.08) 0 8px 20px;
+    --font: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --canvas: #1c1712; --canvas-soft: #241d17; --canvas-strong: #2c241c;
+      --ink: #f3ebdf; --body: #d9cdba; --muted: #b3a48c; --muted-soft: #82755f;
+      --hairline: #3a2f22; --hairline-soft: #332920;
+      --primary: #e2604a; --primary-active: #ef7a63; --primary-tint: #3a201b; --on-primary: #1c1712;
+      --ink-band: #140f0b;
+      --cheong: #4b93ac; --hwang: #d9ac5c;
+      --shadow: rgba(0,0,0,.4) 0 0 0 1px, rgba(0,0,0,.5) 0 8px 24px;
+    }
+  }
+  :root[data-theme="dark"] {
+    --canvas: #1c1712; --canvas-soft: #241d17; --canvas-strong: #2c241c;
+    --ink: #f3ebdf; --body: #d9cdba; --muted: #b3a48c; --muted-soft: #82755f;
+    --hairline: #3a2f22; --hairline-soft: #332920;
+    --primary: #e2604a; --primary-active: #ef7a63; --primary-tint: #3a201b; --on-primary: #1c1712;
+    --ink-band: #140f0b;
+    --cheong: #4b93ac; --hwang: #d9ac5c;
+    --shadow: rgba(0,0,0,.4) 0 0 0 1px, rgba(0,0,0,.5) 0 8px 24px;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font: 400 16px/1.5 var(--font); }
+  a { color: inherit; }
+  img, svg { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--muted); text-decoration: none; }
+  .back-link:hover { color: var(--ink); }
+  .back-link svg { flex: 0 0 auto; }
+  .logo { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; letter-spacing: -0.2px; }
+  .logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); }
+  .nav-links { display: flex; gap: 28px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+
+  .hero { padding: 40px 0 64px; text-align: center; }
+  .badge { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--primary-tint); color: var(--primary-active); border-radius: 999px; font-size: 13px; font-weight: 700; margin-bottom: 22px; }
+  .badge::before { content: "●"; font-size: 8px; }
+  h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; line-height: 1.28; letter-spacing: -0.5px; margin: 0 auto; max-width: 720px; text-wrap: balance; }
+  .hero p.lead { margin: 20px auto 0; max-width: 540px; font-size: 17px; color: var(--body); line-height: 1.6; }
+  .hero-ctas { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; height: 48px; padding: 0 24px; border-radius: 8px; font-size: 16px; font-weight: 600; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
+  .btn-primary { background: var(--primary); color: var(--on-primary); }
+  .btn-primary:hover { background: var(--primary-active); }
+  .btn-secondary { background: var(--canvas); color: var(--ink); border-color: var(--ink); }
+  .btn-secondary:hover { background: var(--canvas-soft); }
+
+  .obang-row { display: flex; justify-content: center; gap: 10px; margin-top: 44px; }
+  .obang-dot { width: 14px; height: 14px; border-radius: 50%; }
+
+  .section { padding: 64px 0; }
+  .section-soft { background: var(--canvas-soft); }
+  .eyebrow { font-size: 13px; font-weight: 700; color: var(--primary-active); letter-spacing: .02em; margin-bottom: 10px; }
+  h2 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.3px; margin: 0 0 12px; text-wrap: balance; }
+  .section-lead { color: var(--muted); font-size: 16px; max-width: 560px; margin: 0 0 36px; }
+
+  .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .feature-card { background: var(--canvas); border: 1px solid var(--hairline); border-radius: 14px; padding: 26px 24px; box-shadow: var(--shadow); }
+  .feature-card .ic { font-size: 24px; margin-bottom: 14px; }
+  .feature-card h3 { font-size: 16.5px; font-weight: 700; margin: 0 0 8px; }
+  .feature-card p { font-size: 13.5px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+  .flow-list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .flow-item { text-align: center; padding: 20px 12px; }
+  .flow-item .n { width: 32px; height: 32px; margin: 0 auto 12px; border-radius: 50%; background: var(--primary-tint); color: var(--primary-active); font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  .flow-item h4 { font-size: 14.5px; font-weight: 700; margin: 0 0 6px; }
+  .flow-item p { font-size: 12.5px; color: var(--muted); margin: 0; line-height: 1.5; }
+
+  .principle-band { background: var(--ink-band); color: var(--on-primary); border-radius: 20px; padding: 48px 40px; }
+  .principle-band .eyebrow { color: #e7ab98; }
+  .principle-band h2 { color: var(--on-primary); }
+  .principle-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; }
+  .principle-item { border-top: 1px solid rgba(250,247,239,.18); padding-top: 16px; }
+  .principle-item b { display: block; font-size: 15px; margin-bottom: 6px; }
+  .principle-item span { font-size: 13px; color: #c9beac; line-height: 1.55; display: block; }
+
+  .disclaimer { margin-top: 40px; padding: 16px 20px; background: var(--canvas-soft); border: 1px solid var(--hairline); border-radius: 12px; font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .disclaimer b { color: var(--ink); }
+
+  footer { border-top: 1px solid var(--hairline); padding: 40px 0; }
+  .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-row .copy { font-size: 13px; color: var(--muted-soft); }
+  .footer-links { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+  .footer-links a:hover { color: var(--ink); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .flow-list { grid-template-columns: repeat(2, 1fr); }
+    .principle-list { grid-template-columns: 1fr; }
+    .principle-band { padding: 32px 24px; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .btn, a { transition: background-color .15s ease, color .15s ease; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <nav class="nav">
+      <a class="back-link" href="index.html">
+        <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        테크셀 홈으로
+      </a>
+      <div class="logo"><span class="dot"></span>감결 鑑訣</div>
+      <div class="nav-links">
+        <a href="#how">이용 방법</a>
+        <a href="#principles">개인정보 원칙</a>
+        <a href="mailto:contact@techsell.kr">문의</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="wrap hero">
+    <div class="badge">출시 예정</div>
+    <h1>손바닥을 비추면,<br>이번 주 번호가 나와요</h1>
+    <p class="lead">손금선을 분석해 번호 6개와 그 근거, 그리고 생명선부터 태양선까지 손금 전체를 풀이한 보고서를 보여드리는 오락 앱입니다. 촬영한 사진은 기기 안에서만 처리되고 저장·전송되지 않습니다.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:contact@techsell.kr?subject=감결 출시 알림 요청">출시 알림 받기</a>
+      <a class="btn btn-secondary" href="#how">이용 방법 보기</a>
+    </div>
+    <div class="obang-row" aria-hidden="true">
+      <span class="obang-dot" style="background:var(--cheong)"></span>
+      <span class="obang-dot" style="background:var(--primary)"></span>
+      <span class="obang-dot" style="background:var(--hwang)"></span>
+      <span class="obang-dot" style="background:#FAF7EF;border:1px solid var(--hairline)"></span>
+      <span class="obang-dot" style="background:var(--ink)"></span>
+    </div>
+  </div>
+
+  <div class="section section-soft" id="how">
+    <div class="wrap">
+      <div class="eyebrow">HOW IT WORKS</div>
+      <h2>촬영부터 보고서까지, 4단계</h2>
+      <p class="section-lead">홈에서 「손금 촬영하기」를 누르면 안내선에 맞춰 자동으로 촬영되고, 그 자리에서 바로 보고서를 확인할 수 있습니다.</p>
+      <div class="flow-list">
+        <div class="flow-item">
+          <div class="n">1</div>
+          <h4>손바닥 촬영</h4>
+          <p>가이드에 손을 맞추면 자동으로 인식해요</p>
+        </div>
+        <div class="flow-item">
+          <div class="n">2</div>
+          <h4>번호 6개 + 근거</h4>
+          <p>어느 손금선에서 나온 숫자인지 하나하나 보여드려요</p>
+        </div>
+        <div class="flow-item">
+          <div class="n">3</div>
+          <h4>손금 풀이 보고서</h4>
+          <p>생명선부터 태양선까지, 손금 전체를 풀이해 드려요</p>
+        </div>
+        <div class="flow-item">
+          <div class="n">4</div>
+          <h4>길한 방위</h4>
+          <p>오늘의 기운이 좋은 방향을 나침반으로 안내해요</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="wrap">
+      <div class="eyebrow">WHY 감결</div>
+      <h2>다른 손금 앱과 다른 점</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="ic">🧵</div>
+          <h3>계산 근거를 그대로 보여줘요</h3>
+          <p>숫자 하나하나가 어느 손금선에서, 어떤 계산으로 나왔는지 트레이스로 확인할 수 있어요. 그냥 랜덤이 아니에요.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🖐️</div>
+          <h3>손금 전체를 제대로 풀이해요</h3>
+          <p>생명선·지능선·감정선·운명선·태양선까지, 번호만이 아니라 손금 자체를 깊이 있게 풀이한 보고서를 드려요.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🧭</div>
+          <h3>위치 권한이 필요 없어요</h3>
+          <p>길한 방위는 나침반 센서만으로 계산해요. 위치 정보를 요구하거나 수집하지 않습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ic">🎨</div>
+          <h3>단청 오방색 디자인</h3>
+          <p>청·적·황·백·흑, 우리 전통 오방색을 화면 곳곳에 담아 한국적인 분위기로 만들었어요.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="principles">
+    <div class="wrap">
+      <div class="principle-band">
+        <div class="eyebrow">안심 원칙</div>
+        <h2>오락을 위한 앱, 사진은 남기지 않습니다</h2>
+        <div class="principle-list">
+          <div class="principle-item">
+            <b>사진은 기기에서만</b>
+            <span>촬영한 손바닥 이미지는 기기 메모리에서만 처리되고, 판독 직후 즉시 폐기됩니다. 저장·전송하지 않습니다.</span>
+          </div>
+          <div class="principle-item">
+            <b>복권 판매·구매 대행 없음</b>
+            <span>복권을 판매하거나 구매를 대행하지 않고, 구매 링크도 제공하지 않습니다. 현금 거래·인앱 결제가 없습니다.</span>
+          </div>
+          <div class="principle-item">
+            <b>오락 목적, 당첨과 무관</b>
+            <span>당첨 확률이나 적중률을 주장하지 않으며, 모든 보고서에 오락 목적 안내 문구가 표시됩니다.</span>
+          </div>
+        </div>
+        <div class="disclaimer" style="background:rgba(250,247,239,.08);border-color:rgba(250,247,239,.18);color:#d9cdba;">
+          <b>안내:</b> 본 앱의 손금 풀이와 번호는 오락을 목적으로 하며, 실제 로또 당첨과는 무관합니다.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="copy">© 2026 감결 鑑訣 · TechSell. 출시 준비 중입니다.</div>
+      <div class="footer-links">
+        <a href="index.html">테크셀 홈으로</a>
+        <a href="mailto:contact@techsell.kr">문의하기</a>
+        <a href="https://gamgyeol-privacy.vercel.app" target="_blank" rel="noopener">개인정보처리방침</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

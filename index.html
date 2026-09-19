@@ -479,7 +479,7 @@
         <div>
           <div class="app-name-row">
             <a class="app-title-btn" href="safetalk-landing.html" target="_blank" rel="noopener"><span class="app-name">세이프톡</span><span class="app-go-arrow" aria-hidden="true"><svg width="8" height="13" viewBox="0 0 8 13" fill="none"><path d="M1 1l6 5.5L1 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-            <span class="app-badge" id="safetalkBadge">출시 예정</span>
+            <span class="app-badge" id="safetalkBadge">iOS 출시</span>
           </div>
         </div>
       </div>
@@ -489,18 +489,19 @@
           <span class="tag" id="sTag2">연락처관리</span>
           <span class="tag" id="sTag3">생활편의</span>
         </div>
-        <div class="store-disabled" style="margin-bottom:8px;">
-          <svg width="21" height="25" viewBox="0 0 21 25" fill="none" aria-hidden="true">
-            <path d="M14.05 12.43c-.03-3.11 2.54-4.61 2.65-4.68-1.44-2.11-3.68-2.4-4.48-2.43-1.91-.19-3.73 1.12-4.7 1.12-.97 0-2.47-1.1-4.06-1.07-2.1.03-4.03 1.22-5.11 3.08-2.18 3.78-.56 9.37 1.57 12.44 1.04 1.5 2.28 3.19 3.9 3.13 1.57-.06 2.16-1.02 4.06-1.02 1.89 0 2.43 1.02 4.09.99 1.69-.03 2.76-1.53 3.8-3.04 1.2-1.74 1.69-3.42 1.72-3.51-.04-.02-3.3-1.27-3.33-5.03-.03-3.14 2.56-4.65 2.68-4.72" fill="rgba(16,36,29,.18)"/>
-            <path d="M13.13 3.87c.87-1.05 1.46-2.51 1.3-3.97-1.25.05-2.77.84-3.67 1.89-.81.93-1.52 2.41-1.33 3.83 1.39.11 2.82-.7 3.7-1.75" fill="rgba(16,36,29,.18)"/>
+        <a class="store-btn" href="https://apps.apple.com/app/id6805744659" target="_blank" rel="noopener" style="margin-bottom:8px;">
+          <svg width="21" height="25" viewBox="0 0 21 25" fill="white" aria-hidden="true">
+            <path d="M14.05 12.43c-.03-3.11 2.54-4.61 2.65-4.68-1.44-2.11-3.68-2.4-4.48-2.43-1.91-.19-3.73 1.12-4.7 1.12-.97 0-2.47-1.1-4.06-1.07-2.1.03-4.03 1.22-5.11 3.08-2.18 3.78-.56 9.37 1.57 12.43 1.04 1.5 2.28 3.18 3.91 3.12 1.57-.06 2.17-.99 4.07-.99 1.9 0 2.44.99 4.1.96 1.69-.03 2.77-1.53 3.8-3.04.32-.47.58-.95.77-1.45-2.9-1.11-2.52-5.05-2.52-5.05zm-2.37-8.28c.87-1.05 1.45-2.5 1.29-3.95-1.24.05-2.75.83-3.64 1.87-.8.92-1.5 2.41-1.31 3.82 1.38.11 2.79-.7 3.66-1.74z"/>
           </svg>
           <div>
             <div class="store-lbl-sm">Download on the</div>
             <div class="store-lbl-lg">App Store</div>
           </div>
-          <span class="soon-chip" id="sSoon1">준비 중</span>
-        </div>
-        <div class="store-disabled">
+          <svg class="store-arrow" width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true">
+            <path d="M1 1l5 5-5 5" stroke="rgba(255,255,255,.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+<div class="store-disabled">
           <svg width="21" height="23" viewBox="0 0 21 23" fill="none" aria-hidden="true">
             <path d="M1 .5C.6 1 .3 1.7.3 2.6v17.8c0 .9.3 1.6.8 2l.1.1 10-10v-.3L1 .5z" fill="rgba(16,36,29,.25)"/>
             <path d="M14.3 14.5 11.4 11.6v-.3l2.9-2.9.1.1 3.5 2c1 .57 1 1.53 0 2.1l-3.6 1.9z" fill="rgba(16,36,29,.25)"/>
@@ -592,7 +593,7 @@ const strings = {
     comingSoon:'준비 중',
     gamgyeolBadge:'무료',
     gTag1:'엔터테인먼트', gTag2:'손금풀이', gTag3:'행운번호',
-    safetalkBadge:'출시 예정',
+    safetalkBadge:'iOS 출시',
     sTag1:'안내문자', sTag2:'연락처관리', sTag3:'생활편의',
     aboutTitle:'불편함을 발견하고\n앱으로 해결합니다',
     aboutDesc:'테크셀은 일상 속 꼭 필요하지만 존재하지 않는 앱을 직접 발굴하고 개발하는 모바일 앱 스튜디오입니다.',
@@ -618,7 +619,7 @@ const strings = {
     comingSoon:'Soon',
     gamgyeolBadge:'Free',
     gTag1:'Entertainment', gTag2:'Palmistry', gTag3:'Lucky Numbers',
-    safetalkBadge:'Coming Soon',
+    safetalkBadge:'Now on iOS',
     sTag1:'Notifications', sTag2:'Contacts', sTag3:'Lifestyle',
     aboutTitle:'We find problems\nand solve them with apps',
     aboutDesc:'TechSell is a mobile app studio that discovers unmet needs in everyday life and builds apps to address them.',
@@ -668,7 +669,6 @@ function setLang(lang) {
   setText('gSoon2',       s.comingSoon);
   setText('safetalkBadge',s.safetalkBadge);
   setText('sTag1',s.sTag1); setText('sTag2',s.sTag2); setText('sTag3',s.sTag3);
-  setText('sSoon1',       s.comingSoon);
   setText('sSoon2',       s.comingSoon);
   setHtml('aboutTitle',   s.aboutTitle);
   setText('aboutDesc',    s.aboutDesc);

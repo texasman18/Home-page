@@ -4,43 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YAM — 한국·일본·대만 화장실 찾기</title>
-<meta name="description" content="급할 때 가장 먼저 찾는 화장실 앱. 한국·일본·대만 78,000여 곳의 화장실을 GPS로 실시간 안내합니다. 완전 무료.">
+<meta name="description" content="급할 때 가장 먼저 찾는 화장실 앱. 한국·일본·대만 81,000여 곳의 화장실을 GPS로 실시간 안내합니다. 완전 무료.">
 <style>
   :root {
     --canvas: #ffffff;
-    --canvas-soft: #F7F5F0;
-    --canvas-strong: #EFEBE1;
-    --ink: #10241D;
-    --body: #2c3e37;
-    --muted: rgba(16,36,29,.6);
-    --muted-soft: rgba(16,36,29,.42);
-    --hairline: rgba(16,36,29,.12);
-    --hairline-soft: rgba(16,36,29,.08);
-    --primary: #00754A;
-    --primary-active: #005C3B;
-    --primary-tint: #E3F1EA;
-    --on-primary: #ffffff;
-    --ink-band: #1E3932;
-    --shadow: rgba(16,36,29,.02) 0 0 0 1px, rgba(16,36,29,.05) 0 2px 8px, rgba(16,36,29,.08) 0 8px 20px;
+    --canvas-soft: #F6F5F1;
+    --canvas-strong: #EDEBE4;
+    --ink: #141414;
+    --body: #2e2e2c;
+    --muted: rgba(20,20,20,.62);
+    --muted-soft: rgba(20,20,20,.44);
+    --hairline: rgba(20,20,20,.12);
+    --hairline-soft: rgba(20,20,20,.08);
+    --primary: #FFC700;
+    --primary-active: #7A5A00;
+    --primary-tint: #FFF3C4;
+    --on-primary: #141414;
+    --ink-band: #141414;
+    --band-accent: #FFC700;
+    --band-text: #d6d6d2;
+    --shadow: rgba(20,20,20,.02) 0 0 0 1px, rgba(20,20,20,.05) 0 2px 8px, rgba(20,20,20,.08) 0 8px 20px;
     --font: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', system-ui, Roboto, 'Helvetica Neue', sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --canvas: #14201b; --canvas-soft: #1a2621; --canvas-strong: #202f28;
-      --ink: #eef5f1; --body: #cdd9d3; --muted: #9fb0a8; --muted-soft: #71857c;
-      --hairline: #2b3a33; --hairline-soft: #24322c;
-      --primary: #2fd28c; --primary-active: #56e0a1; --primary-tint: #16332a; --on-primary: #0d1c17;
-      --ink-band: #0d1c17;
+      --canvas: #141414; --canvas-soft: #1c1c1b; --canvas-strong: #242422;
+      --ink: #f2f2ee; --body: #d2d2cd; --muted: #a4a49d; --muted-soft: #77776f;
+      --hairline: #333330; --hairline-soft: #2a2a28;
+      --primary: #FFC700; --primary-active: #FFD84D; --primary-tint: #3a3000; --on-primary: #141414;
+      --ink-band: #0c0c0c; --band-accent: #FFC700; --band-text: #d6d6d2;
       --shadow: rgba(0,0,0,.4) 0 0 0 1px, rgba(0,0,0,.5) 0 8px 24px;
     }
   }
   :root[data-theme="dark"] {
-    --canvas: #14201b; --canvas-soft: #1a2621; --canvas-strong: #202f28;
-    --ink: #eef5f1; --body: #cdd9d3; --muted: #9fb0a8; --muted-soft: #71857c;
-    --hairline: #2b3a33; --hairline-soft: #24322c;
-    --primary: #2fd28c; --primary-active: #56e0a1; --primary-tint: #16332a; --on-primary: #0d1c17;
-    --ink-band: #0d1c17;
-    --shadow: rgba(0,0,0,.4) 0 0 0 1px, rgba(0,0,0,.5) 0 8px 24px;
+    --canvas: #141414; --canvas-soft: #1c1c1b; --canvas-strong: #242422;
+      --ink: #f2f2ee; --body: #d2d2cd; --muted: #a4a49d; --muted-soft: #77776f;
+      --hairline: #333330; --hairline-soft: #2a2a28;
+      --primary: #FFC700; --primary-active: #FFD84D; --primary-tint: #3a3000; --on-primary: #141414;
+      --ink-band: #0c0c0c; --band-accent: #FFC700; --band-text: #d6d6d2;
+      --shadow: rgba(0,0,0,.4) 0 0 0 1px, rgba(0,0,0,.5) 0 8px 24px;
   }
 
   * { box-sizing: border-box; }
@@ -55,7 +57,7 @@
   .back-link:hover { color: var(--ink); }
   .back-link svg { flex: 0 0 auto; }
   .logo { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 800; letter-spacing: -0.2px; }
-  .logo .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); }
+  .logo .app-ico { width: 30px; height: 30px; border-radius: 22.5%; }
   .nav-links { display: flex; gap: 28px; font-size: 14.5px; font-weight: 500; color: var(--muted); }
   .nav-links a:hover { color: var(--ink); }
 
@@ -67,7 +69,7 @@
   .hero-ctas { margin-top: 32px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; padding: 0 22px; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
   .btn-primary { background: var(--ink-band); color: #fff; }
-  .btn-primary:hover { background: var(--primary-active); }
+  .btn-primary:hover { opacity: .86; }
   .btn-secondary { background: var(--canvas); color: var(--ink); border-color: var(--hairline); }
   .btn-secondary:hover { background: var(--canvas-soft); }
   .btn small { display: block; font-size: 10px; font-weight: 600; opacity: .7; text-align: left; }
@@ -97,12 +99,12 @@
   .feature-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.55; }
 
   .principle-band { background: var(--ink-band); color: #fff; border-radius: 20px; padding: 48px 40px; }
-  .principle-band .eyebrow { color: #a8e0c6; }
+  .principle-band .eyebrow { color: var(--band-accent); }
   .principle-band h2 { color: #fff; }
   .principle-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; }
   .principle-item { border-top: 1px solid rgba(255,255,255,.18); padding-top: 16px; }
   .principle-item b { display: block; font-size: 15px; margin-bottom: 6px; }
-  .principle-item span { font-size: 13px; color: #c7ded2; line-height: 1.55; display: block; }
+  .principle-item span { font-size: 13px; color: var(--band-text); line-height: 1.55; display: block; }
 
   footer { border-top: 1px solid var(--hairline); padding: 40px 0; }
   .footer-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
@@ -129,7 +131,7 @@
         <svg width="7" height="12" viewBox="0 0 7 12" fill="none" aria-hidden="true"><path d="M6 1L1 6l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         테크셀 홈으로
       </a>
-      <div class="logo"><span class="dot"></span>YAM</div>
+      <div class="logo"><img class="app-ico" src="data:image/png;base64,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" alt="" width="30" height="30">YAM</div>
       <div class="nav-links">
         <a href="#countries">국가별 데이터</a>
         <a href="#features">기능</a>
@@ -141,7 +143,7 @@
   <div class="wrap hero">
     <div class="badge">출시 완료 · 다운로드 가능</div>
     <h1>급할 때 가장 먼저 찾는<br>화장실 앱, YAM</h1>
-    <p class="lead">한국·일본·대만 78,000여 곳의 화장실 위치를 GPS로 실시간 안내합니다. 여행지에서도, 동네에서도 — 검색은 한국어 그대로, 완전 무료입니다.</p>
+    <p class="lead">한국·일본·대만 81,000여 곳의 화장실 위치를 GPS로 실시간 안내합니다. 여행지에서도, 동네에서도 — 검색은 한국어 그대로, 완전 무료입니다.</p>
     <div class="hero-ctas">
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6777852410" target="_blank" rel="noopener">
         <svg width="19" height="23" viewBox="0 0 21 25" fill="white" aria-hidden="true"><path d="M14.05 12.43c-.03-3.11 2.54-4.61 2.65-4.68-1.44-2.11-3.68-2.4-4.48-2.43-1.91-.19-3.73 1.12-4.7 1.12-.97 0-2.47-1.1-4.06-1.07-2.1.03-4.03 1.22-5.11 3.08-2.18 3.78-.56 9.37 1.57 12.44 1.04 1.5 2.28 3.19 3.9 3.13 1.57-.06 2.16-1.02 4.06-1.02 1.89 0 2.43 1.02 4.09.99 1.69-.03 2.76-1.53 3.8-3.04 1.2-1.74 1.69-3.42 1.72-3.51-.04-.02-3.3-1.27-3.33-5.03-.03-3.14 2.56-4.65 2.68-4.72"/><path d="M13.13 3.87c.87-1.05 1.46-2.51 1.3-3.97-1.25.05-2.77.84-3.67 1.89-.81.93-1.52 2.41-1.33 3.83 1.39.11 2.82-.7 3.7-1.75"/></svg>
@@ -154,9 +156,9 @@
     </div>
 
     <div class="stat-row">
-      <div class="stat"><b>78,000+</b><span>화장실 데이터</span></div>
+      <div class="stat"><b>81,000+</b><span>화장실 데이터</span></div>
       <div class="stat"><b>3개국</b><span>한국·일본·대만</span></div>
-      <div class="stat"><b>무료</b><span>광고 없이 이용</span></div>
+      <div class="stat"><b>무료</b><span>구독·결제 없이</span></div>
     </div>
   </div>
 
@@ -175,8 +177,8 @@
         <div class="country-card">
           <div class="flag">🇯🇵</div>
           <h3>일본</h3>
-          <div class="n">8,835곳</div>
-          <p>도쿄·오사카 등 주요 도시 위주. 여행 중 급할 때 가장 먼저 찾게 되는 화장실 정보를 담았습니다.</p>
+          <div class="n">11,492곳</div>
+          <p>도쿄와 간사이 전역(오사카·교토·고베·나라·와카야마·시가·히메지, 간사이공항 포함)까지. 여행 중 급할 때 가장 먼저 찾게 되는 화장실 정보를 담았습니다.</p>
         </div>
         <div class="country-card">
           <div class="flag">🇹🇼</div>
@@ -191,7 +193,7 @@
   <div class="section" id="features">
     <div class="wrap">
       <div class="eyebrow">HOW IT WORKS</div>
-      <h2>지도 한 번이면 끝, 복잡한 설정이 없습니다</h2>
+      <h2>지도 한 번이면 끝, 해외에서도 막힘없이</h2>
       <p class="section-lead">앱을 열면 바로 내 위치 주변 화장실이 지도에 뜹니다. 회원가입도, 별도 설정도 필요 없습니다.</p>
       <div class="feature-grid">
         <div class="feature-card">
@@ -208,6 +210,21 @@
           <div class="feature-num">3</div>
           <h3>여행지에서도 자동 전환</h3>
           <p>일본·대만 입국이 감지되면 해당 국가 모드로 자동 전환되어 별도 검색 없이 바로 쓸 수 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">4</div>
+          <h3>직원에게 보여주기</h3>
+          <p>"화장실 좀 써도 될까요?"를 일본어·대만어(번체) 큰 글씨로 전체 화면에 띄워 보여줄 수 있습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">5</div>
+          <h3>해외여행 키트</h3>
+          <p>일본 비데 버튼 번역표, 대만 휴지·변기 안내, 현지 긴급연락처를 전화 버튼과 함께 담았습니다.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-num">6</div>
+          <h3>오프라인 목록</h3>
+          <p>한 번 받아둔 일본·대만 데이터는 기기에 저장됩니다. 지도를 못 불러와도 가까운 20곳을 거리·방향으로 보여줍니다.</p>
         </div>
       </div>
     </div>
